@@ -42,8 +42,8 @@ func TestSerialize(t *testing.T) {
 
 func TestRead(t *testing.T) {
 	tests := map[string]struct {
-		input  []byte
 		output *Handshake
+		input  []byte
 		fails  bool
 	}{
 		// "parse handshake into struct": {

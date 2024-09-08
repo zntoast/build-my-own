@@ -32,6 +32,7 @@ func (h *Handshake) Serialize() []byte {
 	return buf
 }
 
+// Read reads a handshake from a reader.
 func Read(r io.Reader) (*Handshake, error) {
 	lengthBuf := make([]byte, 1)
 	_, err := io.ReadFull(r, lengthBuf)
@@ -45,6 +46,7 @@ func Read(r io.Reader) (*Handshake, error) {
 		return nil, err
 	}
 
+	// Read the rest of the handshake
 	handshakeBuf := make([]byte, 48+pstrLen)
 	_, err = io.ReadFull(r, handshakeBuf)
 	if err != nil {

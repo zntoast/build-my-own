@@ -17,8 +17,8 @@ func TestHasPiece(t *testing.T) {
 func TestSetPiece(t *testing.T) {
 	tests := []struct {
 		input Bitfield
-		index int
 		outpt Bitfield
+		index int
 	}{
 		{
 			input: Bitfield{0b01010100, 0b01010100},

@@ -21,8 +21,8 @@ const (
 )
 
 type Message struct {
-	ID      messageID
 	Payload []byte
+	ID      messageID
 }
 
 func FormatRequest(index, begin, length int) *Message {
@@ -31,6 +31,12 @@ func FormatRequest(index, begin, length int) *Message {
 	binary.BigEndian.PutUint32(payload[4:8], uint32(begin))
 	binary.BigEndian.PutUint32(payload[8:12], uint32(length))
 	return &Message{ID: MsgRequest, Payload: payload}
+}
+
+func FormatHave(index int) *Message {
+	payload := make([]byte, 4)
+	binary.BigEndian.PutUint32(payload, uint32(index))
+	return &Message{ID: MsgHave, Payload: payload}
 }
 
 func ParsePiece(index int, buf []byte, msg *Message) (int, error) {

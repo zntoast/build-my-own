@@ -11,8 +11,8 @@ import (
 )
 
 type bencodeTrackerResp struct {
-	Interval int
 	Peers    string
+	Interval int
 }
 
 func (t *Torrentfile) buildTrackerURL(peerID [20]byte, port uint16) (string, error) {
