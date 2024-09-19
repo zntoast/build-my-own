@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${fileDirname}",
-            "args": [ "C:/Users/user/Desktop/workspace/go/build-my-own/bit_torrent_cli/torrentfile/testdata/archlinux-2024.09.01-x86_64.iso.torrent", "archLinuxOS"]
+            "args": [ "/build-my-own/bit_torrent_cli/torrentfile/testdata/archlinux-2024.09.01-x86_64.iso.torrent", "archLinuxOS"]
         }
     ]
 }
